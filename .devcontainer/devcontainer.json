@@ -8,7 +8,10 @@
 	// 	"ghcr.io/devcontainers-contrib/features/lite-server:1": {}
 	// }
 
-	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
+	"build":{
+		"dockerfile":"./Dockerfile"
+	},
+	// "image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
 
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -19,8 +22,9 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "`php -S 0.0.0.0:8000`",
-	"postStartCommand": "php -S 0.0.0.0:4000",
-	"forwardPorts": [4000],
+	"postStartCommand": "php -S 0.0.0.0:80",
+	// "forwardPorts": ["80:4000"],
+	"forwardPorts": [80],
 
 	// Configure tool-specific properties.
 	// "customizations": {},
