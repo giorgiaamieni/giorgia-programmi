@@ -8,10 +8,10 @@
 	// 	"ghcr.io/devcontainers-contrib/features/lite-server:1": {}
 	// }
 
-	"build":{
-		"dockerfile":"./Dockerfile"
-	},
-	// "image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
+	// "build":{
+	// 	"dockerfile":"./Dockerfile"
+	// },
+	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
 
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
