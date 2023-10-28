@@ -22,9 +22,9 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "`php -S 0.0.0.0:8000`",
-	"postStartCommand": "php -S 0.0.0.0:80",
+	"postStartCommand": "php -S 0.0.0.0:4000",
 	// "forwardPorts": ["80:4000"],
-	"forwardPorts": [80],
+	"forwardPorts": [4000],
 
 	// Configure tool-specific properties.
 	// "customizations": {},
