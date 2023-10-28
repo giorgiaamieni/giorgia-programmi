@@ -1,5 +1,5 @@
 # FROM mcr.microsoft.com/devcontainers/php:1-8.2-bullseye
-FROM php:7.4-apache
+FROM php:8.2-apache
 
 
 # ENV WEBROOT /var/www/html
