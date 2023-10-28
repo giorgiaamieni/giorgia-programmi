@@ -5,7 +5,7 @@ FROM php:7.4-apache
 # ENV WEBROOT /var/www/html
 COPY . /var/www/html
 
-RUN a2enmod php7.4
+# RUN a2enmod php7.4
 
 EXPOSE 80
 
