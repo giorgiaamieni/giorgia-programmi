@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
 <?php
+if (isset($_GET['info'])) {
+    echo phpinfo();
+    die();
+    # code...
+}
 function getDirContents($dir, $bpath, $cpath = '', &$results = array())
 {
     if (is_dir($dir)) {
@@ -12,7 +17,7 @@ function getDirContents($dir, $bpath, $cpath = '', &$results = array())
         }
         // Controllo se voglio che la cartella abbia una pagina tutta sua, 
         // ovvero non elenco tutti i file qui ma all'interno di un'altro menù 
-        // (per farlo basta creare all'interno un file chiamato '.explorer-recoursive')
+        // (perˇ farlo basta creare all'interno un file chiamato '.explorer-recoursive')
         if (in_array('.explorer-recoursive', $files) && $bpath != $cpath) {
             $results['/index.php?dir=' . $cpath] = $cpath;
             return $results;
@@ -33,7 +38,7 @@ function getDirContents($dir, $bpath, $cpath = '', &$results = array())
                         else
                             $results[$cpath . $value] = $cpath . $value;
                 } else
-                // Se il file è una cartella esploro la cartella per trovare altri file
+                    // Se il file è una cartella esploro la cartella per trovare altri file
                     getDirContents($path, $bpath, $cpath . $value, $results,);
             }
         }
@@ -87,6 +92,15 @@ function getDirContents($dir, $bpath, $cpath = '', &$results = array())
     }
     ?>
 
+    <footer class="blocco-link footer">
+
+        <h1>Credits</h1>
+        <p>
+            Creato da Samuele Longhin
+        </p>
+        <a href="?info=1">Visualizza PhpInfo</a>
+        </div>
+
 </body>
 
 </html>
@@ -97,13 +111,14 @@ function getDirContents($dir, $bpath, $cpath = '', &$results = array())
         text-align: center;
     }
 
+    body {
+        height: 100vh;
+    }
+
     .blocco-link {
         border-radius: 50px;
         padding: 50px 50px;
         margin-bottom: 20px;
-    }
-
-    .blocco-link {
         width: 700px;
         margin-left: auto;
         margin-right: auto;
@@ -123,6 +138,19 @@ function getDirContents($dir, $bpath, $cpath = '', &$results = array())
 
     .blocco-link a {
         font-size: 20px;
+    }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* width: 100%; */
+        /* background-color: red; */
+        /* color: white; */
+        text-align: center;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
     }
 
     @media screen and (max-width: 700px) {
