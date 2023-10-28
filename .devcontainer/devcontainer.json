@@ -1,8 +1,5 @@
 {
 	"name": "Programmazione Web",
-	// "build":{
-	// 	"dockerfile":"./Dockerfile"
-	// },
 	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
 	"postStartCommand": "php -S 0.0.0.0:4000",
 	"forwardPorts": [
